@@ -1,19 +1,25 @@
 ---
 name: dream
-description: Project taste and standards learned from operator steering. Load at the start of every session and check all work against its Rules before declaring any task done — even if the task seems unrelated to style or process. Also invoked explicitly as /dream at the end of a session to mine steering events and update itself.
+description: Project taste and standards learned from operator steering. Two modes - recall, agent-triggered - load at the start of every session and check all work against the Rules before declaring any task done, even if the task seems unrelated to style or process; and dream, human-triggered - the operator invokes /dream at the end of a session to mine steering events and update the skill itself.
 ---
 
 # Dream — this project
 
 This skill encodes the operator's accumulated taste for this project, learned from their steering interventions across sessions. It is the accountability contract: before finishing any task, check the work against the Rules below. It is updated only by `/dream`, never mid-task.
 
-## How to apply this skill
+## Two modes
 
-- Load this skill at session start. Treat every Rule as a standing instruction with the same force as a direct user message.
+This skill has exactly two triggers. Know which one you are in.
+
+1. **Recall — agent-triggered, every session.** You (the working agent) load this skill at session start, unprompted, and hold the Rules in force while you work. The operator never asks for this; it is automatic. In this mode you only *read* the skill — never edit it.
+2. **Dream — human-triggered, end of session.** The operator explicitly invokes `/dream`. You stop being the working agent: follow `references/update.md` to mine the session for steering events and rewrite this skill. Never dream unprompted.
+
+## How to apply (recall mode)
+
+- Treat every Rule as a standing instruction with the same force as a direct user message.
 - Each Rule is condition-shaped: a trigger situation plus an instruction. When its trigger situation occurs during your work, the rule is in force. Before declaring any task done, walk the Rules, identify which triggers fired, and fix violations *before* presenting — the goal is that the operator never has to say any of these things again.
 - If a Rule conflicts with a direct instruction in the current session, the direct instruction wins; note the conflict so `/dream` can reconcile it.
 - Do not read `references/dreams.md`. It is `/dream`'s working memory, not yours.
-- When the operator explicitly invokes `/dream` (end of session), you are not the working agent anymore: follow `references/update.md` to mine the session for steering events and update this skill.
 
 ## Rules
 
