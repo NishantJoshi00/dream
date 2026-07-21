@@ -1,6 +1,6 @@
 ---
 name: dream
-description: Project taste and standards learned from operator steering. Two modes - recall, agent-triggered - load at the start of every session and check all work against the Rules before declaring any task done, even if the task seems unrelated to style or process; and dream, human-triggered - the operator invokes /dream at the end of a session to mine steering events and update the skill itself.
+description: Project taste and standards learned from operator steering. Load at the start of every session and check all work against the Rules before declaring any task done, even if the task seems unrelated to style or process.
 ---
 
 # Dream — this project
@@ -12,7 +12,7 @@ This skill encodes the operator's accumulated taste for this project, learned fr
 This skill has exactly two triggers. Know which one you are in.
 
 1. **Recall — agent-triggered, every session.** You (the working agent) load this skill at session start, unprompted, and hold the Rules in force while you work. The operator never asks for this; it is automatic. In this mode you only *read* the skill — never edit it.
-2. **Dream — human-triggered, end of session.** The operator explicitly invokes `/dream`. You stop being the working agent: follow `references/update.md` to mine the session for steering events and rewrite this skill. Never dream unprompted.
+2. **Dream — human-triggered, end of session.** The operator explicitly invokes `/dream`. You stop being the working agent: ignore the rest of this file and follow `references/update.md`, which is the complete dreaming procedure. Never dream unprompted.
 
 ## How to apply (recall mode)
 
