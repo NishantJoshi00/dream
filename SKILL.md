@@ -1,6 +1,6 @@
 ---
 name: dream
-description: Project taste learned from operator steering. Load every session; check all work against the Rules before finishing any task.
+description: Operator taste for this project, learned from past corrections. Load when the current task matches a situation below, or you will likely repeat a mistake the operator already corrected once. Situations - creating or structurally modifying a skill (layout, frontmatter, description, references).
 ---
 
 # Dream — this project
@@ -11,7 +11,7 @@ This skill encodes the operator's accumulated taste for this project, learned fr
 
 This skill has exactly two triggers. Know which one you are in.
 
-1. **Recall — agent-triggered, every session.** You (the working agent) load this skill at session start, unprompted, and hold the Rules in force while you work. The operator never asks for this; it is automatic. In this mode you only *read* the skill — never edit it.
+1. **Recall — agent-triggered.** You (the working agent) loaded this skill because your current task matches a situation in the description — territory where an agent was corrected before. Hold the Rules in force while you work. In this mode you only *read* the skill — never edit it, and never read `references/`.
 2. **Dream — human-triggered, end of session.** The operator explicitly invokes `/dream`. You stop being the working agent: ignore the rest of this file and follow `references/update.md`, which is the complete dreaming procedure. Never dream unprompted.
 
 ## How to apply (recall mode)

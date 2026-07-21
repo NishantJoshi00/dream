@@ -52,7 +52,16 @@ Priority bands: **active** 3–5 (rendered in SKILL.md, loaded every session), *
 
 Check every candidate against `## Anti-rules` in SKILL.md before writing. When in doubt, don't capture — a wrong active rule costs more than a missed one.
 
-## Step 6 — ledger + commit
+## Step 6 — re-derive the description
+
+The frontmatter description is the only part of this skill every future agent sees in every session: it is the recall hook, and it is **derived state** — never hand-edited, never containing anything unbacked by an active rule. After the Rules have settled, regenerate it:
+
+- Keep the two fixed lead sentences (what this is + the load-when-matched warning). Regenerate only the trailing `Situations -` list.
+- The list is the compressed union of the active rules' "when" clauses. While rules are few, enumerate situations; as they accumulate, merge them into class-level phrases — name the class of moment, and let the Rules hold the specifics. The whole description stays under ~75 words no matter how many rules exist.
+- Phrase each situation as a recognizable task-time moment, not a capability. The test: an agent scanning it mid-task should think "my current task matches — skipping this risks a correction," not "this skill can do X."
+- A demotion or forgetting that removes a rule also removes its situation from the description. Recall coverage must track active rules exactly — in both directions.
+
+## Step 7 — ledger + commit
 
 Append the ledger line to SKILL.md:
 
