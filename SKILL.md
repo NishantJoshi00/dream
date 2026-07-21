@@ -1,6 +1,6 @@
 ---
 name: dream
-description: Project taste and standards learned from operator steering. Load at the start of every session and check all work against the Rules before declaring any task done, even if the task seems unrelated to style or process.
+description: Project taste learned from operator steering. Load every session; check all work against the Rules before finishing any task.
 ---
 
 # Dream — this project
