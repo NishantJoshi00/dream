@@ -60,6 +60,8 @@ The frontmatter description is the only part of this skill every future agent se
 - The list is the compressed union of the active rules' "when" clauses. While rules are few, enumerate situations; as they accumulate, merge them into class-level phrases — name the class of moment, and let the Rules hold the specifics. The whole description stays under ~75 words no matter how many rules exist.
 - Phrase each situation as a recognizable task-time moment, not a capability. The test: an agent scanning it mid-task should think "my current task matches — skipping this risks a correction," not "this skill can do X."
 - A demotion or forgetting that removes a rule also removes its situation from the description. Recall coverage must track active rules exactly — in both directions.
+- Keep `## Trigger probes` in dreams.md in lockstep with the same edits: add one `load:` probe per new or revived rule (a concrete task-time moment its trigger should catch), delete the probe on demotion or forgetting, and add a `skip:` probe whenever this session showed the skill loading — or nearly loading — somewhere it shouldn't.
+- Then desk-check the regenerated description against every probe: reading *only* the description, would an agent in the probe's situation load this skill? Every `load:` must pass, every `skip:` must fail. A failing probe indicts the description, not the rule — rewrite the description until all probes pass.
 
 ## Step 7 — ledger + commit
 
@@ -70,6 +72,8 @@ Append the ledger line to SKILL.md:
 ```
 
 If steering events haven't declined over the last ~5 entries, say which rules are failing and why — check first whether the failing rules share a symptom of trigger-vagueness.
+
+Run `scripts/validate.sh` from the skill directory. It checks the mechanical invariants — frontmatter shape, description length, rule/evidence/ledger line formats, ≤ 30 active rules, ≤ 300 lines, one load probe per active rule. It must exit 0 before you commit; fix violations, never work around them.
 
 If the skill directory is inside a git repository, commit only the skill directory:
 
